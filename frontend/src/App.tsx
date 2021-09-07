@@ -11,22 +11,21 @@ function App() {
       <div className="container">
         <h1 className="text-primary py-3">Dashboard</h1>
         <br />
+        <div className="text-center">
+          <h2 className="text-primary">All Live Movimentations</h2>
+        </div>
+        <DataTable />
+        <br />
         <div className="row px-3">
-          <div className="col-sm-6">
-            <h5 className="text-center text-secondary">Success Rate (%)</h5>
-            <BarChart />
-          </div>
           <div className="col-sm-6">
             <h5 className="text-center text-secondary">Movimentation Pieces</h5>
             <DonutChart />
           </div>
-          <br />
-          <div className="py-3">
-            <h2 className="text-primary">All Live Movimentations</h2>
+          <div className="col-sm-6">
+            <h5 className="text-center text-secondary">Success Rate (%)</h5>
+            <BarChart />
           </div>
         </div>
-        <br />
-        <DataTable />
       </div>
       <br />
       <Footer />
