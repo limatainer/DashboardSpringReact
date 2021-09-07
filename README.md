@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 ### `yarn`
 
-#This way you will reinstall the dependencies and after that you can just run:
+## This way you will reinstall the dependencies and after that you can just run:
 
 ### `yarn start`
 
