@@ -5,79 +5,79 @@ function Footer() {
         <thead>
           <tr>
             <th>Data</th>
-            <th>Vendedor</th>
-            <th>Clientes visitados</th>
-            <th>Negócios fechados</th>
-            <th>Valor</th>
+            <th>Client</th>
+            <th>Visits</th>
+            <th>Trainings</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>John Cenna</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Todo Duro</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Mike Tyson</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Monde Tyler</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Nelson Farit</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Zé do bolo</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Muqueca Silva</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Magro de Melo</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Silva Sousa Soares</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
           </tr>
           <tr>
             <td>22/04/2021</td>
-            <td>Macelo Oliveira</td>
+            <td>Parell Wilame</td>
             <td>34</td>
             <td>25</td>
             <td>15017.00</td>
