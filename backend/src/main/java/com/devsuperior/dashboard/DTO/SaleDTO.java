@@ -1,42 +1,36 @@
-package com.devsuperior.dashboard.entities;
+package com.devsuperior.dashboard.DTO;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import com.devsuperior.dashboard.entities.Sale;
 
-
-@Entity
-@Table(name = "tb_sales")
-public class Sale {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SaleDTO {
 	private Long id;
 	private Integer visits;
 	private Integer trainings;
 	private Double price;
 	private LocalDate date;
 	
-	@ManyToOne
-	@JoinColumn(name = "client_id")
-	private Client client;
+	private ClientDTO client;
 	
-	public Sale() {}
+	public SaleDTO() {}
 
-	public Sale(Long id, Integer visits, Integer trainings, Double price, LocalDate date, Client client) {
-		
+	public SaleDTO(Long id, Integer visits, Integer trainings, Double price, LocalDate date, ClientDTO client) {
 		this.id = id;
 		this.visits = visits;
 		this.trainings = trainings;
 		this.price = price;
 		this.date = date;
 		this.client = client;
+	}
+	
+	public SaleDTO(Sale entity) {
+		id = entity.getId();
+		visits = entity.getVisits();
+		trainings = entity.getTrainings();
+		price = entity.getPrice();
+		date = entity.getDate();
+		client = new ClientDTO(entity.getClient());
 	}
 
 	public Long getId() {
@@ -79,13 +73,12 @@ public class Sale {
 		this.date = date;
 	}
 
-	public Client getClient() {
+	public ClientDTO getClient() {
 		return client;
 	}
 
-	public void setClient(Client client) {
+	public void setClient(ClientDTO client) {
 		this.client = client;
 	}
-	
 	
 }
