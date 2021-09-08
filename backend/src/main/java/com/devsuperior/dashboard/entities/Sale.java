@@ -18,24 +18,24 @@ public class Sale {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Integer visited;
-	private Integer deals;
-	private Double amount;
+	private Integer visits;
+	private Integer trainings;
+	private Double price;
 	private LocalDate date;
 	
 	@ManyToOne
-	@JoinColumn(name = "seller_id")
-	private Seller seller;
+	@JoinColumn(name = "client_id")
+	private Client client;
 	
 	public Sale() {}
 
-	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
+	public Sale(Long id, Integer visits, Integer trainings, Double price, LocalDate date, Client client) {
 		this.id = id;
-		this.visited = visited;
-		this.deals = deals;
-		this.amount = amount;
+		this.visits = visits;
+		this.trainings = trainings;
+		this.price = price;
 		this.date = date;
-		this.seller = seller;
+		this.client = client;
 	}
 
 	public Long getId() {
@@ -47,27 +47,27 @@ public class Sale {
 	}
 
 	public Integer getVisited() {
-		return visited;
+		return visits;
 	}
 
-	public void setVisited(Integer visited) {
-		this.visited = visited;
+	public void setVisited(Integer visits) {
+		this.visits = visits;
 	}
 
 	public Integer getDeals() {
-		return deals;
+		return trainings;
 	}
 
-	public void setDeals(Integer deals) {
-		this.deals = deals;
+	public void setDeals(Integer trainings) {
+		this.trainings = trainings;
 	}
 
 	public Double getAmount() {
-		return amount;
+		return price;
 	}
 
-	public void setAmount(Double amount) {
-		this.amount = amount;
+	public void setAmount(Double price) {
+		this.price = price;
 	}
 
 	public LocalDate getDate() {
@@ -78,11 +78,11 @@ public class Sale {
 		this.date = date;
 	}
 
-	public Seller getSeller() {
-		return seller;
+	public Client getSeller() {
+		return client;
 	}
 
-	public void setSeller(Seller seller) {
-		this.seller = seller;
+	public void setSeller(Client client) {
+		this.client = client;
 	}
 }

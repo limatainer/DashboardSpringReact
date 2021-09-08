@@ -11,20 +11,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_sellers")
-public class Seller {
+@Table(name = "tb_clients")
+public class Client {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	
-	@OneToMany(mappedBy = "seller")
+	@OneToMany(mappedBy = "client")
 	private List<Sale> sales = new ArrayList<>();
 	
-	public Seller() {}
+	public Client() {}
 
-	public Seller(Long id, String name) {
+	public Client(Long id, String name) {
 
 		this.id = id;
 		this.name = name;
