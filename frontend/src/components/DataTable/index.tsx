@@ -1,9 +1,9 @@
 function DataTable() {
   return (
     <div className="table-responsive">
-      <table className="table table-striped table-sm">
+      <table className="table table-striped table-hover table-sm">
         <thead>
-          <tr>
+          <tr className="table-warning">
             <th>Data</th>
             <th>Client</th>
             <th>Visits</th>
