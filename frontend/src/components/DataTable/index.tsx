@@ -1,87 +1,48 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { SalePage } from "types/sale";
+import { formatLocalDate } from "utils/format";
+import { BASE_URL } from "utils/requests";
+
 function DataTable() {
+  const [page, setPage] = useState<SalePage>({
+    first: true,
+    last: true,
+    number: 0,
+    totalElements: 0,
+    totalPages: 0
+  });
+
+  useEffect(() => {
+    axios.get(`${BASE_URL}/sales?page=0&size=20&sort=date,desc`)
+      .then(response => {
+        setPage(response.data);
+      });
+  }, []);
+
   return (
     <div className="table-responsive">
       <table className="table table-striped table-hover table-sm">
         <thead>
           <tr className="table-warning">
-            <th>Data</th>
+            <th>Last Visit</th>
             <th>Client</th>
             <th>Visits</th>
             <th>Trainings</th>
-            <th>Price</th>
+            <th>Total Price</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>22/04/2021</td>
-            <td>John Cenna</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
+          {page.content?.map(item =>
+          (<tr key={item.id}>
+            <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
+            <td>{item.client.name}</td>
+            <td>{item.visits}</td>
+            <td>{item.trainings}</td>
+            <td>{item.price.toFixed(2)}</td>
           </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Todo Duro</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Mike Tyson</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Monde Tyler</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Nelson Farit</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Zé do bolo</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Muqueca Silva</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Magro de Melo</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Silva Sousa Soares</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
-          <tr>
-            <td>22/04/2021</td>
-            <td>Parell Wilame</td>
-            <td>34</td>
-            <td>25</td>
-            <td>15017.00</td>
-          </tr>
+          )
+          )}
         </tbody>
       </table>
     </div>
