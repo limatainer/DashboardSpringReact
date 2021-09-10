@@ -22,7 +22,7 @@ function Dashboard() {
             <DonutChart />
           </div>
           <div className="col-sm-6">
-            <h5 className="text-center text-secondary">Success Rate (%)</h5>
+            <h5 className="text-center text-secondary">Success Rate on Clients trainings (%)</h5>
             <BarChart />
           </div>
         </div>
