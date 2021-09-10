@@ -1,4 +1,5 @@
 import axios from "axios";
+import Pagination from "components/Pagination";
 import { useEffect, useState } from "react";
 import { SalePage } from "types/sale";
 import { formatLocalDate } from "utils/format";
@@ -21,32 +22,35 @@ function DataTable() {
   }, []);
 
   return (
-    <div className="table-responsive">
-      <table className="table table-striped table-hover table-sm">
-        <thead>
-          <tr className="table-warning">
-            <th>Last Visit</th>
-            <th>Client</th>
-            <th>Visits</th>
-            <th>Trainings</th>
-            <th>Total Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {page.content?.map(item =>
-          (<tr key={item.id}>
-            <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
-            <td>{item.client.name}</td>
-            <td>{item.visits}</td>
-            <td>{item.trainings}</td>
-            <td>{item.price.toFixed(2)}</td>
-          </tr>
-          )
-          )}
-        </tbody>
-      </table>
-    </div>
-
+    <>
+      <br />
+      <Pagination page={page} />
+      <div className="table-responsive">
+        <table className="table table-striped table-hover table-sm">
+          <thead>
+            <tr className="table-warning">
+              <th>Last Visit</th>
+              <th>Client</th>
+              <th>Visits</th>
+              <th>Trainings</th>
+              <th>Total Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {page.content?.map(item =>
+            (<tr key={item.id}>
+              <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
+              <td>{item.client.name}</td>
+              <td>{item.visits}</td>
+              <td>{item.trainings}</td>
+              <td>{item.price.toFixed(2)}</td>
+            </tr>
+            )
+            )}
+          </tbody>
+        </table>
+      </div>
+    </>
 
 
   );
