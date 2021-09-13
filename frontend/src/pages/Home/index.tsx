@@ -9,16 +9,18 @@ function Home() {
       <br />
       <div className="container">
         <div className="jumbotron">
-          <h1 className="display-4">DSVendas</h1>
-          <p className="lead">Analise o desempenho das suas vendas por diferentes perspectivas</p>
+          <h1 className="display-4">CrossFitness</h1>
+          <p className="lead">CrossFitness Client Dashboard</p>
           <br />
           <hr />
-          <p>Esta aplicação consiste em exibir um dashboard a partir de dados fornecidos por um back end construído com Spring Boot.</p>
+          <p>Dashboard seed comes from Spring boot Postgress tools</p>
           <Link className="btn btn-success btn-lg" to="/dashboard">
             Access Dashboard
           </Link>
         </div>
       </div>
+      <br />
+      <br />
       <Footer />
     </>
 

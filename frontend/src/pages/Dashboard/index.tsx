@@ -28,6 +28,7 @@ function Dashboard() {
         </div>
       </div>
       <br />
+      <br />
       <Footer />
     </>
 
