@@ -1,5 +1,7 @@
 # Getting Started with this DashApp
 
+## check out the result here https://lnkd.in/dmNepW8x
+
 In the project directory, you can run:
 
 ### `yarn`
